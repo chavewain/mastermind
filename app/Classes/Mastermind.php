@@ -20,6 +20,7 @@ class Mastermind
 
     public function GetHints($code)
     {
+
         return array_diff($code, $this->code) ?? true;
     }
 }

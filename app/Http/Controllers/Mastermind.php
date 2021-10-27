@@ -23,7 +23,7 @@ class Mastermind extends Controller
         $result = $mastermind->GetHints($play);
 
 
-        if(count($result)){
+        if(count($result) != 0){
 
             $base = ['x', 'x', 'x', 'x'];
             foreach($result as $key => $val){
