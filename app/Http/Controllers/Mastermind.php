@@ -29,8 +29,9 @@ class Mastermind extends Controller
             foreach($result as $key => $val){
                 $base[$key] = 'o';
             }
-            $data = ['data' => ['Graph' => implode(",", $base), 'Black' => count($init) - count($result), 'White' => count($result)]];
-            return view('test', $data);
+
+            return ['Graph' => $base, 'Black' => count($init) - count($result), 'White' => count($result)];
+
 
         }else
             return 'You win!';
