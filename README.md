@@ -10,7 +10,10 @@
 ## About The Code
 
 This is an test project to complete the evaluation for the the position of PHP / Lavaver Developer,
-Thanks to Alberto Mijares for the opportunity
+Thanks to Alberto Mijares for the opportunity.
+
+The mastermind accept query string params as show below mastermind/?data=1,2,3,4 for win
+
 
 ## About Laravel
 
