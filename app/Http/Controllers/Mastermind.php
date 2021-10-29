@@ -17,11 +17,13 @@ class Mastermind extends Controller
         }
 
 
-        $init = [1, 2, 3, 4];
+        $init = [1, 1, 3, 4];
         $play = explode(",", $request->data);
         $mastermind = new Game($init);
+        $white = $mastermind->GetWhites($play);
         $result = $mastermind->GetHints($play);
 
+        // return $mastermind->GetWhites($play);
 
         if(count($result)){
 
@@ -30,7 +32,7 @@ class Mastermind extends Controller
                 $base[$key] = 'o';
             }
 
-            return ['Graph' => $base, 'Black' => count($init) - count($result), 'White' => count($result)];
+            return ['Graph' => $base, 'Black' => count($result), 'White' => $white];
 
 
         }else
