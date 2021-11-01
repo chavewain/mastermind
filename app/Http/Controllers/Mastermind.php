@@ -23,20 +23,16 @@ class Mastermind extends Controller
         $white = $mastermind->GetWhites($play);
         $result = $mastermind->GetHints($play);
 
-        // return $mastermind->GetWhites($play);
-
-        if(count($result)){
-
-            $base = ['x', 'x', 'x', 'x'];
-            foreach($result as $key => $val){
-                $base[$key] = 'o';
-            }
-
-            return ['Graph' => $base, 'Black' => count($result), 'White' => $white];
 
 
-        }else
-            return 'You win!';
+        $base = ['x', 'x', 'x', 'x'];
+        foreach($result as $key => $val){
+            $base[$key] = 'o';
+        }
+
+        return ['Graph' => $base, 'Black' => count($result), 'White' => $white];
+
+
 
 
     }

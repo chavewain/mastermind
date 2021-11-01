@@ -20,7 +20,7 @@ class Mastermind
         $whites = 0;
         foreach($code as $key => $val){
 
-            if(in_array($key, $this->code)){
+            if(in_array($val, $this->code)){
                 if ($val != $this->code[$key])
                     $whites++;
             }
@@ -33,6 +33,7 @@ class Mastermind
 
     public function GetHints($code)
     {
+        // dd(array_intersect_assoc($code, $this->code));
         return array_intersect_assoc($code, $this->code);
     }
 }
